@@ -1,0 +1,44 @@
+body {
+	font-family: 'VT323', monospace;
+	background-image: url("../images/background.png");
+	color: #ffff00;
+}
+pre {
+	color: #ffff00;
+}
+.jumbotron {
+	background-image: url("../images/star-wars.jpg");
+	text-align: center;
+}
+
+a {
+	color: #2719C7;
+	text-decoration: underline;
+	font-size: 30px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+h2#correct-guesses {
+	font-size: 30px;
+}
+
+main {
+	width: 80%;
+	margin-top: 40px;
+	margin-right: auto;
+	margin-bottom: 40px;
+	margin-left: auto;
+	padding: 10px;
+	border: dotted 3px #ffff00;
+}
+
+#jokes-container {
+	width: 80%;
+	margin: auto;
+	border: dotted 3px #ffff00;
+	padding-top: 10px;
+}
+
