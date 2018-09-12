@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-us">
 
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Hangman Game</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<h1 class="display-4">Star Wars Hangman Game</h1>
+				<p class="lead">Save R2D2 and C3P0!</p>
+			</div>
+		</div>
+
+		<main class="flexbox">
+		<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<br>
+				<a href="#" onclick="startGame()" class="pressAnyKey">Start Game</a>
+				<br>
+				<h2>May the Force be With You.</h2>
+				<br>
+				<aside id="incorrect-guesses"></aside>
+				<br>
+				<h2 id="correct-guesses">_ _ _ _ _ _</h2>
+				<br>
+				<h2>Wins: <span id="wins"></span></h2>
+				<br>
+				<h2>Hint: In a Galaxy far, far away... Just kidding, you shouldn't need a hint.</h2>
+			</div>
+			<div class="col-6">
+				<br>
+				<pre id="hangman-art">                                    
+				      _
+				     /~\                           
+                                    (o o)      We're doomed!       
+                                    _\=/_                          
+                    ___        #   /  _  \   #                     
+                   /() \        \\//|/.\|\\//                      
+                 _|_____|_       \/  \_/  \/                       
+                | | === | |         |\ /|                          
+                |_|  O  |_|         \_ _/                          
+                 ||  O  ||          | | |                          
+                 ||__*__||          | | |                          
+                |~ \___/ ~|         []|[]                          
+                /=\ /=\ /=\         | | |                          
+________________[_]_[_]_[_]________/_]_[_\_________________________
+				</pre>
+				<br>
+			</div>
+		</div>
+		</div>
+			
+		</div>
+		</main>
+	
+		<div class="container" id="jokes-container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2>May the farce be with you...</h2>
+					<p>Luke Skywalker and Obi-Wan Kenobi walk into a Chinese restaurant. Ten minutes into the meal, Luke still can’t figure out the chopsticks, dropping food everywhere. Obi-Wan finally snaps: <em>“Use the forks, Luke.”</em></p>
+					
+					<p id="joke-two">Which website did Chewbacca create to share Empire secrets? <em>WOOKIELEAKS.</em></p>
+					
+				
+					</div>
+			</div>
+		</div>
+
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+	<audio controls="controls"><source src="assets/starwars.mp3" type="audio/mpeg" /></audio>
+</body>
+
+</html>
