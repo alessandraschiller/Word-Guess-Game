@@ -22,6 +22,7 @@ var wins = 0;
     var currentWord;
     var blankedWordWithGuesses;
     var numOfGuesses = 7;
+    var hangmanart = document.getElementById("hangman-art");
 
 var startGame = function(word){
     lettersGuessedIncorrectly = [];
@@ -31,6 +32,7 @@ var startGame = function(word){
     listenForKeyPress(); 
     updateIncorrectGuesses('');
     currentWord = word;
+    hangmanart.innerHTML = "";
 };
 
 var getRandomWord = function(){
@@ -54,7 +56,7 @@ var replaceWordWithBlanks = function(length){
 };
 
 var fillInGuesses = function(letter, word, blankedWordWithGuesses){
-    console.log(blankedWordWithGuesses);
+    console.log(word);
     var str = blankedWordWithGuesses;
     var word = word;
     var pos;
@@ -86,8 +88,8 @@ var handleKeyPress = function(event){
 };
 
 var handleCorrectGuess = function(guess){
-    console.log("You Guesses Correctly");
-    blankedWordWithGuesses = fillInGuesses(guess, word, blankedWordWithGuesses);
+    console.log("You Guessed Correctly");
+    blankedWordWithGuesses = fillInGuesses(guess, currentWord, blankedWordWithGuesses);
     updateCorrectGuesses(blankedWordWithGuesses);
     if (checkIfWordIsComplete(blankedWordWithGuesses)){
         handleWin();
@@ -95,7 +97,7 @@ var handleCorrectGuess = function(guess){
 };
 
 var handleIncorrectGuess = function(guess){
-    console.log("You Guesses InCorrectly");
+    console.log("You Guessed InCorrectly");
     lettersGuessedIncorrectly.push(guess);
     updateIncorrectGuesses(lettersGuessedIncorrectly.join(', '));
     updateHangmanArt();
@@ -109,8 +111,10 @@ var updateHangmanArt = function (){
     var percentage = lettersGuessedIncorrectly.length / numOfGuesses;
     var linesToShow = Math.floor(totalLines * percentage);
     var art = '';
-    for (var i=0; i <linesToShow; i ++){
-        art = art+asciiArtArray[i] +"\n";
+    for (var i=0; i < linesToShow; i ++){
+        if (i < 14) {
+            art = art+asciiArtArray[i] +"\n";
+        }
     }
     var element = document.getElementById('hangman-art');
     element.innerHTML = art;
@@ -139,6 +143,3 @@ var handleLoss = function(){
 
 startGame();
 
-function reset() {
-startGame ();
-};
